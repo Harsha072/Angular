@@ -35,14 +35,14 @@ export class AppComponent {
       map((s: AuthState) => s.isAuthenticated ?? false)
     );
 
-    // setInterval(() => {
-    //   this.dataService.userInfo().subscribe(
-    //     res => console.log('Session is still active'),
-    //     err => { 
-    //       this.signOut()
-    //     }
-    //   );
-    // }, 180000); // Check session expiry every 5 minutes
+    setInterval(() => {
+      this.dataService.userInfo().subscribe(
+        res => console.log('Session is still active'),
+        err => { 
+          this.signOut()
+        }
+      );
+    }, 180000); // Check session expiry every 5 minutes
   }
   
 
